@@ -1,0 +1,45 @@
+{% extends 'gym_nutrition/base.html' %}
+
+{% block title %}Home | CoreFit Health & Nutrition{% endblock %}
+
+{% block content %}
+    <div class="text-center" style="color:aliceblue">
+        <h1 class="display-4">Welcome to CoreFit Health & Nutrition</h1>
+        <p class="lead">Explore our personal coaching subscription plans to enhance your fitness and nutrition.</p>
+        <hr class="my-4">
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'subscriptions' %}" role="button">View Subscription Plans</a>
+            <a class="btn btn-secondary btn-lg" href="{% url 'view_cart' %}" role="button">View Cart</a>
+        </p>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Gym Tips</h5>
+                    <p class="card-text">Discover the best gym workouts to achieve your fitness goals.</p>
+                    <a href="{% url 'gym_tips' %}" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Nutrition Tips</h5>
+                    <p class="card-text">Get nutrition advice tailored to your fitness journey.</p>
+                    <a href="{% url 'nutrition_tips' %}" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Contact Us</h5>
+                    <p class="card-text">Have any questions? Reach out to us for personalized coaching.</p>
+                    <a href="{% url 'contact' %}" class="btn btn-primary">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

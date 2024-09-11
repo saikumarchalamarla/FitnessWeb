@@ -1,0 +1,19 @@
+{% extends 'gym_nutrition/base.html' %}
+
+{% block title %}Cart | CoreFit Health & Nutrition{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">Your Cart</h1>
+    {% if subscriptions %}
+        <ul class="list-group">
+            {% for sub in subscriptions %}
+                <li class="list-group-item">
+                    {{ sub.plan_name }} - ${{ sub.price }}
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'checkout' %}" class="btn btn-success mt-4">Proceed to Checkout</a>
+    {% else %}
+        <p>Your cart is empty.</p>
+    {% endif %}
+{% endblock %}

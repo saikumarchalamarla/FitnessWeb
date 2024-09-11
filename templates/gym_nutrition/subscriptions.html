@@ -1,0 +1,22 @@
+{% extends 'gym_nutrition/base.html' %}
+
+{% block title %}Subscriptions | CoreFit Health & Nutrition{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">Subscription Plans</h1>
+    <div class="row">
+        {% for sub in subscriptions %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ sub.plan_name }}</h5>
+                        <p class="card-text">{{ sub.description }}</p>
+                        <p><strong>Price: ${{ sub.price }}</strong></p>
+                        <p>Duration: {{ sub.duration_months }} months</p>
+                        <a href="{% url 'add_to_cart' sub.id %}" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nutrition Tips</title>
+</head>
+<body>
+    <h1>Nutrition Tips</h1>
+
+    {% for tip in tips %}
+        <h2>{{ tip.title }}</h2>
+        <p>{{ tip.content }}</p>
+    {% endfor %}
+
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>
